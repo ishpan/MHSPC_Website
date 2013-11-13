@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<!-- Use the following color scheme throughout the website 
@@ -5,23 +6,109 @@
 			
 		-->
 		<title>MHS PC Studios</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+var scro;
+$(window).on('scroll', function() {
+    var y_scroll_pos = window.pageYOffset;
+    var scroll_pos_test = 30;             // set to whatever you want it to be
+    if(y_scroll_pos > scroll_pos_test) {
+		if (scro==1){
+		$("#logo").css({position: 'fixed', top: '1%'});
+		$("nav").css({position: 'fixed', top: '10%'});
+		$("#logo").css({left:'42%', width:'16%', height:'8%'});
+		$("nav").css({left:'42%'});
+		$("#logo").animate({width:'10%', height:'5%'}, 700);
+		$("#logo").animate({left:'10%', queue: false}, 700);
+		$("nav").animate({left:'60%', queue: false}, 700);
+		$("nav").animate({top:'1%', queue: false}, 300);
+		scro=0;
+		}
+        }
+        else
+        {
+			scro=1;
+			$("#logo").css({position: 'static', left:'0%', width:'20%', height:'17%'});
+			$("nav").css({position: 'static'});
+    }
+});
+</script>
 		<style>
-		/* Keep all CSS code here for now, we'll move it to an external file later */
-		</style>
+			#logo
+			{
+			position:relative;
+			width:20%;
+			height:17%;
+			}
+			ul
+			{
+			list-style-type:none;
+margin:0;
+padding-top:3%;
+			}
+li
+{
+display:inline;
+padding-right:1.5%;
+}
+a
+{
+text-decoration:none;
+color:#000000;
+font-family:"Arial",Arial,Sans-Serif;
+}
+a:hover
+{ 
+color: red;
+}
+body
+{
+margin-right:10%;
+margin-left:10%;
+margin-top:4%;
+
+}
+#top
+{
+width:100%;
+			text-align: center ;
+}
+	</style>
 	</head>
 	<body>
 
 			<!-- A logo will need to go here  -->
+		<div id="top">
+			<img src="https://lh3.googleusercontent.com/-wxN8O4xkR_k/UoLpVMOPfFI/AAAAAAAABq4/Hauy7tIdVL8/w810-h182-no/Title.png" alt="MHSCS Studios Logo" id="logo"></img>
 			<nav>
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#products">Products</a></li>
-					<li><a href="#contact">Contact</a></li>
+				<li><a href="# active" >HOME</a></li>
+				<li><a href="#about">ABOUT</a></li>
+				<li><a href="#services">SERVICES</a></li>
+				<li><a href="#work">WORK</a></li>
+				<li><a href="#contact">CONTACT</a></li>
 				</ul>
 			</nav>
+		</div>
 
 			<!-- And the rest of the content will follow below: -->
+			
+			<a name="services"></a>
+			<div class="services">
+				
+			</div>
+			
+			<a name="about"></a>
+			<div class="about">
+				
+			</div>
+			
+			<a name="contact"></a>
+			<div class="contact">
+				
+				
+			</div>
+			<img src="https://lh3.googleusercontent.com/-O-IipkPmJdw/UoL6Z3shWdI/AAAAAAAABr0/UfN_y0CGmxo/w958-h414-no/water.png" alt="MHSCS Studios Logo" style="height:1000px; width:500px;"></img>
 
 	</body>
 </html>
