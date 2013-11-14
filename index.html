@@ -5,92 +5,108 @@
 			#fff;
 			
 		-->
-		<title>MHS PC Studios</title>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
 var scro;
+var scrod;
 $(window).on('scroll', function() {
     var y_scroll_pos = window.pageYOffset;
-    var scroll_pos_test = 30;             // set to whatever you want it to be
-    if(y_scroll_pos > scroll_pos_test) {
-		if (scro==1){
-		$("#logo").css({position: 'fixed', top: '1%'});
-		$("nav").css({position: 'fixed', top: '10%'});
-		$("#logo").css({left:'42%', width:'16%', height:'8%'});
-		$("nav").css({left:'42%'});
-		$("#logo").animate({width:'10%', height:'5%'}, 700);
-		$("#logo").animate({left:'10%', queue: false}, 700);
-		$("nav").animate({left:'60%', queue: false}, 700);
-		$("nav").animate({top:'1%', queue: false}, 300);
+ var scroll_pos_test = 25;	// set to whatever you want it to be
+    if(y_scroll_pos > 25) {
+		if(scro==1)
+		{
 		scro=0;
+		scrod=1;
+		$("#them").css({position: 'fixed', top: '10px', left:'15%'});
+		$("#logo").css({position: 'fixed', top: '-2px', left:'15%'});
+		$("#logo").fadeOut();
+		setTimeout(function(){
+			$("#them").animate({width:'40px', height:'40px'});
+			$("#them").animate({top:'1%'});
+		}, 400);
 		}
         }
         else
         {
-			scro=1;
-			$("#logo").css({position: 'static', left:'0%', width:'20%', height:'17%'});
-			$("nav").css({position: 'static'});
+		if(scrod==1)
+		{
+		scrod=0;
+		$("#them").animate({width:'75px', height:'75px'});
+		$("#them").css({position: 'absolute', top: '5px', left:'0'});
+		setTimeout(function(){
+			$("#logo").fadeIn();
+			$("#logo").css({position: 'relative', top: '-7px', left:'0'});
+    // Other code to show whatever you want goes here, ie. $('some selector').show();
+		}, 400);
+		}
+		scro=1;
     }
 });
 </script>
+		<title>MHS PC Studios</title>
 		<style>
 			#logo
 			{
-			position:relative;
-			width:20%;
-			height:17%;
+			width:270px;
+			height:121px;
+			float:left;
+			z-index:2;
 			}
 			ul
 			{
 			list-style-type:none;
-margin:0;
-padding-top:3%;
+			overflow:hidden;
+			margin-bottom:35px;
 			}
 li
 {
-display:inline;
-padding-right:1.5%;
+float:right;
+margin-top:77px;
+padding-left:50px;
 }
 a
 {
+display:block;
 text-decoration:none;
 color:#000000;
 font-family:"Arial",Arial,Sans-Serif;
 }
 a:hover
-{ 
-color: red;
+{
+border-bottom:thick solid black;
 }
 body
 {
-margin-right:10%;
-margin-left:10%;
-margin-top:4%;
-
+margin-top:35px;
+margin-left:0;
+margin-right:0;
+Padding:0;
 }
-#top
+#header
 {
-width:100%;
-			text-align: center ;
+position: relative; left: 0; top: 0;
+margin-right:10%;
+margin-left:15%;
 }
-	</style>
+		</style>
 	</head>
 	<body>
 
 			<!-- A logo will need to go here  -->
-		<div id="top">
-			<img src="https://lh3.googleusercontent.com/-wxN8O4xkR_k/UoLpVMOPfFI/AAAAAAAABq4/Hauy7tIdVL8/w810-h182-no/Title.png" alt="MHSCS Studios Logo" id="logo"></img>
+		<div id="header" >
+			<img src="C:\Users\Ishan\Documents\MHSCS\logo.png" alt="MHSCS Studios Logo" id="logo" style="position: relative; top: -7px; left: 0;""></img>
+			<img src="C:\Users\Ishan\Documents\MHSCS\m.png" alt="MHSCS Studios Logo" id="them" style="height:75px;z-index:3; width:75px; position: absolute; top: 5px; left: 0;"></img>
 			<nav>
 				<ul>
-				<li><a href="# active" >HOME</a></li>
-				<li><a href="#about">ABOUT</a></li>
-				<li><a href="#services">SERVICES</a></li>
-				<li><a href="#work">WORK</a></li>
-				<li><a href="#contact">CONTACT</a></li>
+					<li><a href="#contact">CONTACT</a></li>
+					<li><a href="#about">ABOUT</a></li>
+					<li><a href="#process">PROCESS</a></li>
+					<li><a href="#work">WORK</a></li>
+					<li><a href="#services">SERVICES</a></li>
+					<li><a href="# active" style="border-bottom:thick solid #000000;">HOME</a></li>
 				</ul>
 			</nav>
-		</div>
-
+			</div>
 			<!-- And the rest of the content will follow below: -->
 			
 			<a name="services"></a>
@@ -108,6 +124,7 @@ width:100%;
 				
 				
 			</div>
+			<img src="C:\Users\Ishan\Documents\MHSCS\cover.png" alt="MHSCS Studios Logo" style="height:400px; width:1598px;"></img>
 			<img src="https://lh3.googleusercontent.com/-O-IipkPmJdw/UoL6Z3shWdI/AAAAAAAABr0/UfN_y0CGmxo/w958-h414-no/water.png" alt="MHSCS Studios Logo" style="height:1000px; width:500px;"></img>
 
 	</body>
